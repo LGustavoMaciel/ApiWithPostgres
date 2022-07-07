@@ -32,8 +32,8 @@ verifique a tabela com o comando <strong>\dt</strong>
 
 Forneça as permissões com o comando 
 <br>
-<strong>grant all privileges on all tables in schema public to user_todo;</strong>
-<strong>grant all privileges on all sequences in schema public to user_todo;</strong>
+<strong>grant all privileges on all tables in schema public to user_todo;</strong><br>
+<strong>grant all privileges on all sequences in schema public to user_todo;</strong><br>
 <br>
 
 <hr>
