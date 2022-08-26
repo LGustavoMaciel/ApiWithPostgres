@@ -1,7 +1,7 @@
 package db
 
 import (
-	"apiWithPostgres/configs"
+	"apiWithPostgres/shared/configs"
 	"database/sql"
 	"fmt"
 

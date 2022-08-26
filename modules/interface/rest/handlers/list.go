@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"apiWithPostgres/models"
+	models "apiWithPostgres/modules"
 	"encoding/json"
 	"log"
 	"net/http"
