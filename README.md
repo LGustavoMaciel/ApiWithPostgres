@@ -21,7 +21,7 @@
 <strong>grant all privileges on database api_todo to user_todo;</strong>
 
 <br>
-<h4>Agora iremos criar a tabela<h4>
+<h4>Crie a tabela<h4>
 
 
 <strong>\c api_todo;</strong>
