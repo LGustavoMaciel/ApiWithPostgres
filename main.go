@@ -1,8 +1,8 @@
 package main
 
 import (
-	"apiWithPostgres/configs"
-	"apiWithPostgres/handlers"
+	"apiWithPostgres/modules/interface/rest/handlers"
+	"apiWithPostgres/shared/configs"
 	"fmt"
 	"log"
 	"net/http"

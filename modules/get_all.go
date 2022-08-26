@@ -1,6 +1,6 @@
 package models
 
-import "apiWithPostgres/db"
+import "apiWithPostgres/shared/db"
 
 func GetAll() (todos []Todo, err error){
 	conn, err := db.OpenConnection()
