@@ -1,6 +1,6 @@
 package models
 
-import "apiWithPostgres/db"
+import "apiWithPostgres/shared/db"
 
 func Insert(todo Todo) (id int64, err error){
 	

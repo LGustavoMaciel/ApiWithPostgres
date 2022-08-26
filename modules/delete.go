@@ -1,6 +1,6 @@
 package models
 
-import "apiWithPostgres/db"
+import "apiWithPostgres/shared/db"
 
 func Delete(id int64) (int64, error){
 

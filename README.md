@@ -21,7 +21,7 @@
 <strong>grant all privileges on database api_todo to user_todo;</strong>
 
 <br>
-<h4>Agora iremos criar a tabela<h4>
+<h4>Crie a tabela<h4>
 
 
 <strong>\c api_todo;</strong>
@@ -32,8 +32,8 @@ verifique a tabela com o comando <strong>\dt</strong>
 
 Forneça as permissões com o comando 
 <br>
-<strong>grant all privileges on all tables in schema public to user_todo;</strong>
-<strong>grant all privileges on all sequences in schema public to user_todo;</strong>
+<strong>grant all privileges on all tables in schema public to user_todo;</strong><br>
+<strong>grant all privileges on all sequences in schema public to user_todo;</strong><br>
 <br>
 
 <hr>

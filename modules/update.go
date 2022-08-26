@@ -1,6 +1,6 @@
 package models
 
-import "apiWithPostgres/db"
+import "apiWithPostgres/shared/db"
 
 func Update(id int64, todo Todo) (int64, error){
 
