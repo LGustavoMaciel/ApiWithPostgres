@@ -1,15 +1,17 @@
 package handlers
 
 import (
-	models "apiWithPostgres/modules"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+
+	models "apiWithPostgres/modules"
+	"apiWithPostgres/modules/domain"
 )
 
 func Create(w http.ResponseWriter, r *http.Request) {
-	var todo models.Todo
+	var todo domain.Todo
 
 	err := json.NewDecoder(r.Body).Decode(&todo)
 	if err != nil {

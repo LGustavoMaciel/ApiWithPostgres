@@ -1,8 +1,11 @@
 package models
 
-import "apiWithPostgres/shared/db"
+import (
+	"apiWithPostgres/modules/domain"
+	"apiWithPostgres/shared/db"
+)
 
-func GetAll() (todos []Todo, err error){
+func GetAll() (todos []domain.Todo, err error){
 	conn, err := db.OpenConnection()
 	if err != nil {
 		return
@@ -14,7 +17,7 @@ func GetAll() (todos []Todo, err error){
 		return
 	}
 	for rows.Next(){
-		var todo Todo
+		var todo domain.Todo
 	err = rows.Scan(&todo.ID, &todo.Title, &todo.Description, &todo.Done)
 		if err != nil{
 			continue

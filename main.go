@@ -1,13 +1,14 @@
 package main
 
 import (
-	"apiWithPostgres/modules/interface/rest/handlers"
-	"apiWithPostgres/shared/configs"
 	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+
+	"apiWithPostgres/modules/interface/handlers"
+	"apiWithPostgres/shared/configs"
 )
 
 func main(){
