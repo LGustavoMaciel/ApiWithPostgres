@@ -1,8 +1,11 @@
 package models
 
-import "apiWithPostgres/shared/db"
+import (
+	"apiWithPostgres/modules/domain"
+	"apiWithPostgres/shared/db"
+)
 
-func Get(id int64) (todo Todo, err error){
+func Get(id int64) (todo domain.Todo, err error){
 	conn, err := db.OpenConnection()
 	if err != nil {
 		return

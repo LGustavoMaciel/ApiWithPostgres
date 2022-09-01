@@ -1,13 +1,15 @@
 package handlers
 
 import (
-	models "apiWithPostgres/modules"
 	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
 
 	"github.com/go-chi/chi/v5"
+
+	models "apiWithPostgres/modules"
+	"apiWithPostgres/modules/domain"
 )
 
 func Update(w http.ResponseWriter, r *http.Request) {
@@ -19,7 +21,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var todo models.Todo
+	var todo domain.Todo
 
 	err = json.NewDecoder(r.Body).Decode(&todo)
 	if err != nil {
