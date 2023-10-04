@@ -1,13 +1,14 @@
 package handlers
 
 import (
-	models "apiWithPostgres/modules"
 	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
 
 	"github.com/go-chi/chi/v5"
+
+	repositories "apiWithPostgres/modules/repositories"
 )
 
 func Get(w http.ResponseWriter, r *http.Request) {
@@ -20,7 +21,7 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	todo, err := models.Get(int64(id))
+	todo, err := repositories.Get(int64(id))
 
 	if err != nil {
 		log.Printf("Erro ao atualizar registro  %v", err)

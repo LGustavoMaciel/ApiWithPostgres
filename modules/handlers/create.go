@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	models "apiWithPostgres/modules"
 	"apiWithPostgres/modules/domain"
+	repositories "apiWithPostgres/modules/repositories"
 )
 
 func Create(w http.ResponseWriter, r *http.Request) {
@@ -20,7 +20,7 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	id, err := models.Insert(todo)
+	id, err := repositories.Insert(todo)
 
 	var resp map[string]any
 

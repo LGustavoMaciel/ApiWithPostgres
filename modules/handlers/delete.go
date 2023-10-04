@@ -8,11 +8,10 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	models "apiWithPostgres/modules"
-	"apiWithPostgres/modules/domain"
+	repositories "apiWithPostgres/modules/repositories"
 )
 
-func Update(w http.ResponseWriter, r *http.Request) {
+func Delete(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 
 	if err != nil {
@@ -21,30 +20,21 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var todo domain.Todo
-
-	err = json.NewDecoder(r.Body).Decode(&todo)
-	if err != nil {
-		log.Printf("Erro ao fazer decode do json  %v", err)
-		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-		return
-	}
-
-	rows, err := models.Update(int64(id), todo)
+	rows, err := repositories.Delete(int64(id))
 
 	if err != nil {
-		log.Printf("Erro ao atualizar registro  %v", err)
+		log.Printf("Erro ao remover registro  %v", err)
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
 
 	if rows > 1 {
-		log.Printf("Error: foram atualizados %d registros", rows)
+		log.Printf("Error: foram removidos %d registros", rows)
 	}
 
 	resp := map[string]any{
 		"Error":   false,
-		"Message": "dados atualizados com sucesso!",
+		"Message": "dados removidos com sucesso!",
 	}
 
 	w.Header().Add("Content-Type", "application/json")

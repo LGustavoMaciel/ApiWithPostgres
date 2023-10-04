@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+ postgres:
+  image: postgres:latest
+  container_name: attContainer
+  environment:
+    POSTGRES_DB: root
+    POSTGRES_USER: root
+    POSTGRES_PASSWORD: 63a9f0ea7bb98050796b649e85481845
+  volumes:
+    - ./migrations.sql:/docker-entrypoint-initdb.d/migrations.sql
+  ports:
+    - "5432:5432"

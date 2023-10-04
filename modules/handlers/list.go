@@ -1,16 +1,17 @@
 package handlers
 
 import (
-	models "apiWithPostgres/modules"
 	"encoding/json"
 	"log"
 	"net/http"
+
+	repositories "apiWithPostgres/modules/repositories"
 )
 
 func List(w http.ResponseWriter, r *http.Request) {
-	todos, err := models.GetAll()
+	todos, err := repositories.GetAll()
 	if err != nil {
-		log.Printf("Erro ao obter regitros", err)
+		log.Println("Erro ao obter regitros", err)
 	}
 
 	w.Header().Add("Content-Type", "application/json")
